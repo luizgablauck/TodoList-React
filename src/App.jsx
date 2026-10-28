@@ -14,8 +14,6 @@ function App() {
       return;
     }
     setErro("");
-    {
-    }
 
     const novaTarefa = {
       id: Date.now(),
@@ -39,21 +37,31 @@ function App() {
   }
 
   function apagarTudo() {
-    setTarefas(tarefas.splice(1, tarefas));
+    setTarefas([]);
   }
-
   return (
     <div className="App">
       <Cabecalho titulo="Todo List" />
+      <p>Total de tarefas: {tarefas.length}</p>
+      <p>
+        Tarefas concluidas:{" "}
+        {tarefas.filter((tarefa) => tarefa.concluida).length}
+      </p>
       <input
+        className="input-tarefa"
         type="text"
         value={texto}
         onChange={(event) => setTexto(event.target.value)}
         placeholder="Digite uma tarefa..."
       />
       {erro && <p className="erro">{erro}</p>}
-      <button onClick={adicionarTarefa}>Adicionar</button>
-      <button onClick={apagarTudo}> Apagar tudo</button>
+      <button className="btn" onClick={adicionarTarefa}>
+        Adicionar
+      </button>
+      <button className="btn" onClick={apagarTudo}>
+        {" "}
+        Apagar tudo
+      </button>
       <ul>
         {tarefas.map((tarefa) => (
           <li key={tarefa.id}>

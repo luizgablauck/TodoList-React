@@ -116,7 +116,21 @@ li span {
   align-items: center;
   width: 300px;
   justify-content: center;
-  margin: 20px 400px;
+  margin: 20px auto;
   display: flex;
   border-radius: 22px;
+}
+
+.btn {
+  height: 40px;
+  margin: 30px 9px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.input-tarefa {
+  border: none;
+  height: 40px;
+  border-radius: 15px;
 }
